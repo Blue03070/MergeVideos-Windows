@@ -33,7 +33,7 @@ Note: FFprobe comes bundled with FFmpeg. You don’t install it separately.
 
 ## Install FFmpeg on Windows (not a nerd thing, it’s actually easy)
 
-FFmpeg’s official site links to **compiled builds** because FFmpeg itself is primarily distributed as source code. :contentReference[oaicite:1]{index=1}  
+FFmpeg’s official site links to **compiled builds** because FFmpeg itself is primarily distributed as source code.
 Pick one of these two easy routes:
 
 ### Option A: Install with winget (fastest)
