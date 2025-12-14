@@ -27,7 +27,7 @@ Basically: it’s duct tape for video folders. The good kind. The “fixes every
 2. FFmpeg + FFprobe installed and available in PATH
 3. PowerShell (already included with Windows)
 
-Note: FFprobe comes bundled with FFmpeg. You don’t install it separately. :contentReference[oaicite:0]{index=0}
+Note: FFprobe comes bundled with FFmpeg. You don’t install it separately.
 
 ---
 
